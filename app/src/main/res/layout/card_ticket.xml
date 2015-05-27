@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_content_cartao"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/image_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cartao_tr_sem_linha"
+        android:scaleType="fitStart" />
+
+    <RelativeLayout
+        android:id="@+id/rl_content_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rl_content_apelido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="40dp"
+                android:background="@color/stroke"
+                android:layout_toLeftOf="@+id/text_apelido_header"
+                android:layout_marginRight="10dp" />
+
+            <TextView
+                android:id="@+id/text_apelido_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Jose da Silva"
+                android:textColor="@color/card_text" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_content_saldo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/label_saldo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="8dp"
+                android:text="@string/saldo"
+                android:textColor="@color/card_text"
+                android:textSize="8sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/ll_saldo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/label_saldo"
+                android:layout_alignParentRight="true">
+
+                <TextView
+                    android:id="@+id/label_real"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="3dp"
+                    android:paddingTop="2dp"
+                    android:gravity="top"
+                    android:text="R$"
+                    android:textColor="@color/darkblue"
+                    android:textSize="8sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text_saldo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="3.888,87"
+                    android:textColor="@color/darkblue"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_conteudo2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_content_header"
+        android:paddingTop="30dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="10dp">
+
+        <LinearLayout
+            android:id="@+id/ll_main_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="30dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_numero_cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="XXXX XXXX XXXX 2598"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/text_apelido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/text_numero_cartao"
+                    android:layout_below="@+id/text_numero_cartao"
+                    android:layout_marginTop="2dp"
+                    android:text="Apelido"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/image_indicador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/seta_frente" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rl_footer_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_main_content"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rl_content_ticket_medio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/label_ticket_medio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="2dp"
+                    android:text="@string/ticket_medio"
+                    android:textColor="@color/card_text"
+                    android:textSize="8sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/label_ticket_medio"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="top|center_horizontal">
+
+                    <TextView
+                        android:id="@+id/label_cifrao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dp"
+                        android:gravity="top"
+                        android:paddingTop="2dp"
+                        android:text="R$"
+                        android:textColor="@color/darkblue"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/text_ticket_medio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/label_cifrao"
+                        android:gravity="top"
+                        android:text="999,99"
+                        android:textColor="@color/darkblue"
+                        android:textSize="15sp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_content_proximo_lancamento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/rl_content_ticket_medio"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/label_proximo_lancamento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="2dp"
+                    android:text="@string/proximo_lancamento"
+                    android:textColor="@color/card_text"
+                    android:textSize="8sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text_proximo_lancamento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/label_proximo_lancamento"
+                    android:layout_centerHorizontal="true"
+                    android:text="31/12/2999"
+                    android:textColor="@color/darkblue"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
