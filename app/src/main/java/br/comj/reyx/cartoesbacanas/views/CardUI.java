@@ -107,6 +107,7 @@ public class CardUI extends FrameLayout {
             mTableLayout = (TableLayout) findViewById(R.id.tableLayout);
         }
         // mListView.setCallbacks(this);
+        mListView.setOverScrollMode(OVER_SCROLL_IF_CONTENT_SCROLLS);
 
         mHeader = inflater.inflate(R.layout.header, null);
         mQuickReturnView = (ViewGroup) findViewById(R.id.sticky);

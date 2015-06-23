@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/rl_content_cartao"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    style="?android:selectableItemBackground">
 
     <ImageView
         android:id="@+id/image_card"
@@ -46,7 +47,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="15dp"
-            android:paddingTop="10dp">
+            android:paddingTop="6dp"
+            android:paddingBottom="30dp">
 
             <TextView
                 android:id="@+id/label_saldo"
@@ -56,7 +58,7 @@
                 android:layout_marginTop="8dp"
                 android:text="@string/saldo"
                 android:textColor="@color/card_text"
-                android:textSize="8sp"
+                android:textSize="10sp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -72,7 +74,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginRight="3dp"
-                    android:paddingTop="2dp"
+                    android:paddingTop="4dp"
                     android:gravity="top"
                     android:text="R$"
                     android:textColor="@color/darkblue"
@@ -85,7 +87,7 @@
                     android:layout_height="match_parent"
                     android:text="3.888,87"
                     android:textColor="@color/darkblue"
-                    android:textSize="15sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -99,16 +101,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rl_content_header"
-        android:paddingTop="30dp"
-        android:paddingBottom="20dp"
+        android:paddingTop="2dp"
         android:paddingLeft="30dp"
-        android:paddingRight="10dp">
+        android:paddingStart="30dp"
+        android:paddingRight="10dp"
+        android:paddingEnd="10dp">
 
         <LinearLayout
             android:id="@+id/ll_main_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:layout_marginBottom="30dp"
             android:orientation="horizontal">
 
@@ -118,11 +122,12 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <TextView
+                <br.comj.reyx.cartoesbacanas.views.CardNumberTextView
                     android:id="@+id/text_numero_cartao"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="XXXX XXXX XXXX 2598"
+                    android:text="****  ****  ****  2598"
+                    android:textColor="@color/darkblue"
                     android:textSize="18sp" />
 
                 <TextView
@@ -170,7 +175,7 @@
                     android:layout_marginBottom="2dp"
                     android:text="@string/ticket_medio"
                     android:textColor="@color/card_text"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     android:textStyle="bold" />
 
                 <RelativeLayout
@@ -199,7 +204,7 @@
                         android:gravity="top"
                         android:text="999,99"
                         android:textColor="@color/darkblue"
-                        android:textSize="15sp" />
+                        android:textSize="17sp" />
 
                 </RelativeLayout>
 
@@ -220,7 +225,7 @@
                     android:layout_marginBottom="2dp"
                     android:text="@string/proximo_lancamento"
                     android:textColor="@color/card_text"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -231,7 +236,7 @@
                     android:layout_centerHorizontal="true"
                     android:text="31/12/2999"
                     android:textColor="@color/darkblue"
-                    android:textSize="15sp" />
+                    android:textSize="17sp" />
 
             </RelativeLayout>
 

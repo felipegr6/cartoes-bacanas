@@ -13,9 +13,7 @@
         android:paddingLeft="6dp"
         android:paddingRight="0dp"
         android:clipToPadding="false"
-        android:scrollbarStyle="outsideInset"
-        android:stackFromBottom="true"
-        android:transcriptMode="alwaysScroll" />
+        android:scrollbarStyle="outsideInset" />
 
     <FrameLayout
         android:id="@+id/sticky"

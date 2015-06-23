@@ -1,10 +1,7 @@
 package br.comj.reyx.cartoesbacanas.objects;
 
-import java.util.ArrayList;
-
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.text.TextUtils;
@@ -12,16 +9,17 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 import br.comj.reyx.cartoesbacanas.R;
 import br.comj.reyx.cartoesbacanas.adapters.StackAdapter;
 import br.comj.reyx.cartoesbacanas.listeners.SwipeDismissTouchListener;
 import br.comj.reyx.cartoesbacanas.util.Utils;
 
-public class CardStack extends AbstractCard {
+public class CardStackMoveToLast extends AbstractCard {
     private static final float _12F = 0f;
     private static final float _45F = 66f;
     private static final String NINE_OLD_TRANSLATION_Y = "translationY";
@@ -31,14 +29,14 @@ public class CardStack extends AbstractCard {
     private StackAdapter mAdapter;
     private int mPosition;
     private Context mContext;
-    private CardStack mStack;
+    private CardStackMoveToLast mStack;
 
-    public CardStack() {
+    public CardStackMoveToLast() {
         cards = new ArrayList<Card>();
         mStack = this;
     }
 
-    public CardStack(String title) {
+    public CardStackMoveToLast(String title) {
         cards = new ArrayList<Card>();
         mStack = this;
 
@@ -220,7 +218,7 @@ public class CardStack extends AbstractCard {
         return this.stackTitleColor = color;
     }
 
-    private OnClickListener getClickListener(final CardStack cardStack,
+    private OnClickListener getClickListener(final CardStackMoveToLast cardStack,
                                              final RelativeLayout container, final int index) {
         return new OnClickListener() {
 
@@ -232,6 +230,7 @@ public class CardStack extends AbstractCard {
 
                 for (int i = 0; i < views.length; i++) {
                     views[i] = container.getChildAt(i);
+
                 }
 
                 int last = views.length - 1;
@@ -248,7 +247,7 @@ public class CardStack extends AbstractCard {
 
             }
 
-            public void onClickFirstCard(final CardStack cardStack,
+            public void onClickFirstCard(final CardStackMoveToLast cardStack,
                                          final RelativeLayout frameLayout, final int index,
                                          View[] views) {
                 // run through all the cards
@@ -290,10 +289,9 @@ public class CardStack extends AbstractCard {
                 }
             }
 
-            public void onClickOtherCard(final CardStack cardStack,
+            public void onClickOtherCard(final CardStackMoveToLast cardStack,
                                          final RelativeLayout frameLayout, final int index,
                                          View[] views, int last) {
-
                 // if clicked card is in middle
                 for (int i = index; i <= last; i++) {
                     // run through the cards from the clicked position
@@ -317,7 +315,6 @@ public class CardStack extends AbstractCard {
 
                     if (anim != null)
                         anim.start();
-
                 }
             }
         };
@@ -328,7 +325,7 @@ public class CardStack extends AbstractCard {
         return Utils.convertDpToPixel(mContext, dp);
     }
 
-    private Animator.AnimatorListener getAnimationListener(final CardStack cardStack,
+    private Animator.AnimatorListener getAnimationListener(final CardStackMoveToLast cardStack,
                                                   final RelativeLayout frameLayout, final int index,
                                                   final View clickedCard) {
         return new Animator.AnimatorListener() {
@@ -343,9 +340,6 @@ public class CardStack extends AbstractCard {
                 }
                 frameLayout.removeView(clickedCard);
                 frameLayout.addView(clickedCard);
-
-                ((Activity) mContext).getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-                        WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
             }
 
@@ -371,8 +365,7 @@ public class CardStack extends AbstractCard {
             @Override
             public void onAnimationRepeat(Animator animation) {
                 // TODO Auto-generated method stub
-                ((Activity) mContext).getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-                        WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
             }
 
             @Override
@@ -385,9 +378,6 @@ public class CardStack extends AbstractCard {
 
                 // refresh();
                 mAdapter.notifyDataSetChanged();
-
-                ((Activity) mContext).getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-
                 Log.v("CardsUI", "Notify Adapter");
 
             }

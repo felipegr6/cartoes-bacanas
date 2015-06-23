@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import br.comj.reyx.cartoesbacanas.objects.AbstractCard;
 import br.comj.reyx.cartoesbacanas.objects.CardStack;
+import br.comj.reyx.cartoesbacanas.objects.CardStackMoveToLast;
 
 public class StackAdapter extends BaseAdapter {
 
@@ -59,6 +60,10 @@ public class StackAdapter extends BaseAdapter {
     }
 
     public void setItems(CardStack cardStack, int position) {
+        mStacks.set(position, cardStack);
+    }
+
+    public void setItems(CardStackMoveToLast cardStack, int position) {
         mStacks.set(position, cardStack);
     }
 
