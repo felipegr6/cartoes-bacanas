@@ -304,14 +304,13 @@ public class CardUI extends FrameLayout {
 
     public void addStack(CardStack stack) {
         addStack(stack, false);
-
     }
 
     public void addStack(CardStack stack, boolean refresh) {
         mStacks.add(stack);
+
         if (refresh)
             refresh();
-
     }
 
     //suppress this error message to be able to use spaces in higher api levels
@@ -326,7 +325,7 @@ public class CardUI extends FrameLayout {
                 TableRow tr = null;
                 for (int i = 0; i < mAdapter.getCount(); i += mColumnNumber) {
                     //add a new table row with the current context
-                    tr = (TableRow) new TableRow(mTableLayout.getContext());
+                    tr = new TableRow(mTableLayout.getContext());
                     tr.setOrientation(TableRow.HORIZONTAL);
                     tr.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,
                             TableRow.LayoutParams.WRAP_CONTENT));
@@ -345,9 +344,9 @@ public class CardUI extends FrameLayout {
                     mTableLayout.addView(tr);
                 }
                 if (tr != null) {
-                    //fill the empty space with spacers
+                    // fill the empty space with spacers
                     for (int j = mAdapter.getCount() % mColumnNumber; j > 0; j--) {
-                        View space = null;
+                        View space;
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
                             space = new Space(tr.getContext());
                         } else {
@@ -368,16 +367,14 @@ public class CardUI extends FrameLayout {
     }
 
     public void clearCards() {
-        mStacks = new ArrayList<AbstractCard>();
+        mStacks = new ArrayList<>();
         renderedCardsStacks = 0;
         refresh();
     }
 
     public void setCurrentStackTitle(String title) {
-        CardStack cardStack = (CardStack) mStacks
-                .get(getLastCardStackPosition());
+        CardStack cardStack = (CardStack) mStacks.get(getLastCardStackPosition());
         cardStack.setTitle(title);
-
     }
 
     public OnRenderedListener getOnRenderedListener() {
@@ -389,7 +386,7 @@ public class CardUI extends FrameLayout {
     }
 
     public interface OnRenderedListener {
-        public void onRendered();
+        void onRendered();
     }
 
 }

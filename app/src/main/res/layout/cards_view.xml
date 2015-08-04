@@ -15,7 +15,8 @@
         android:clipToPadding="false"
         android:scrollbarStyle="outsideInset"
         android:stackFromBottom="true"
-        android:transcriptMode="alwaysScroll" />
+        android:transcriptMode="alwaysScroll"
+        android:drawSelectorOnTop="true" />
 
     <FrameLayout
         android:id="@+id/sticky"

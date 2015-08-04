@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mCardView.getScrollView().scrollTo(0, mCardView.getScrollView().getHeight());
+                // mCardView.getScrollView().scrollTo(0, mCardView.getScrollView().getHeight());
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 // intent.setData(Uri.parse("http://www.androidviews.net/"));
                 // startActivity(intent);
@@ -44,14 +44,14 @@ public class MainActivity extends AppCompatActivity {
         };
 
         ArrayList<TicketCard> cards = new ArrayList<TicketCard>();
-        cards.add(new TicketCard("154,99", "10/06/2015", "15,58", R.drawable.cartao_tr_sem_linha));
-        cards.add(new TicketCard("349,19", "01/06/2015", "18,93", R.drawable.cartao_tr_sem_linha));
-        cards.add(new TicketCard("0,00", "29/05/2015", "33,19", R.drawable.cartao_tc_sem_linha));
-        cards.add(new TicketCard("8,92", "05/06/2015", "11,11", R.drawable.cartao_tcar_sem_linha));
-        cards.add(new TicketCard("1940,37", "15/06/2015", "17,40", R.drawable.cartao_tcar_sem_linha));
-        cards.add(new TicketCard("7,99", "22/05/2015", "23,31", R.drawable.cartao_ta_sem_linha));
-        cards.add(new TicketCard("215,40", "22/05/2015", "23,31", R.drawable.cartao_ta_sem_linha));
-        cards.add(new TicketCard("112,98", "22/05/2015", "23,31", R.drawable.cartao_tt_sem_linha));
+        cards.add(new TicketCard("154,99", "10/06/2015", "15,58", R.drawable.ticket_restaurante));
+        cards.add(new TicketCard("349,19", "01/06/2015", "18,93", R.drawable.ticket_restaurante));
+        cards.add(new TicketCard("0,00", "29/05/2015", "33,19", R.drawable.ticket_cultura));
+        cards.add(new TicketCard("8,92", "05/06/2015", "11,11", R.drawable.ticket_car));
+        cards.add(new TicketCard("1940,37", "15/06/2015", "17,40", R.drawable.ticket_car));
+        cards.add(new TicketCard("7,99", "22/05/2015", "23,31", R.drawable.ticket_alimentacao));
+        cards.add(new TicketCard("215,40", "22/05/2015", "23,31", R.drawable.ticket_alimentacao));
+        cards.add(new TicketCard("112,98", "22/05/2015", "23,31", R.drawable.ticket_transporte));
 
         // add AndroidViews Cards
         for (TicketCard card : cards) {

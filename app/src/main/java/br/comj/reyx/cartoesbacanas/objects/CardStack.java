@@ -1,7 +1,5 @@
 package br.comj.reyx.cartoesbacanas.objects;
 
-import java.util.ArrayList;
-
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
@@ -15,6 +13,8 @@ import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 import br.comj.reyx.cartoesbacanas.R;
 import br.comj.reyx.cartoesbacanas.adapters.StackAdapter;
@@ -370,7 +370,6 @@ public class CardStack extends AbstractCard {
 
             @Override
             public void onAnimationRepeat(Animator animation) {
-                // TODO Auto-generated method stub
                 ((Activity) mContext).getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
                         WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
             }
